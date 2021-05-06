@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class parkir extends Model
 {
     use HasFactory;
-
+    protected $primaryKey ='id_parkir';
     protected $fillable = [
         'nama_parkir',
         'lokasi_parkir',

@@ -63,6 +63,14 @@ class ParkirController extends Controller
         
     
             Parkir::create($input);
+            $response = [
+                'message'=>'Added Succesfully',
+                'parkir' => $input,
+                
+                
+            ];
+    
+             return response($response); 
             
     }
 
@@ -70,25 +78,25 @@ class ParkirController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $id_parkir
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_parkir)
     {
-        return Parkir::find($id);
+        return Parkir::find($id_parkir);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  int  $id_parkir
      * @param  \App\Parkir  $parkir
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_parkir)
     {
-        $parkir = Parkir::find($id);
+        $parkir = Parkir::find($id_parkir);
         $parkir->update($request->all());
     // return $parkir;
     /*$request->validate([
@@ -160,12 +168,12 @@ class ParkirController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $id_parkir
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_parkir)
     {
-        return Parkir::destroy($id);
+        return Parkir::destroy($id_parkir);
         $response = [
 			'message'=>'Delete Succesfully',
             
@@ -183,6 +191,13 @@ class ParkirController extends Controller
      */
     public function search($nama_parkir)
     {
-        return Parkir::where('nama_parkir', 'like', '%'.$nama_parkir.'%')->get();
+        $search = Parkir::where('nama_parkir', 'like', '%'.$nama_parkir.'%')->get();
+        $response = [
+			$search
+            
+		
+        ];
+        return response($response);
+
     }
 }

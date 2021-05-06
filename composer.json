@@ -12,6 +12,7 @@
         "laravel/framework": "^8.12",
         "laravel/sanctum": "^2.9",
         "laravel/tinker": "^2.5",
+        "xendit/xendit-php": "^2.10",
         "xendit/xendit-php-clients": "^2.10"
     },
     "require-dev": {
