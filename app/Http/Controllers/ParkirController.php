@@ -78,25 +78,25 @@ class ParkirController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id_parkir
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id_parkir)
+    public function show($id)
     {
-        return Parkir::find($id_parkir);
+        return Parkir::find($id);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id_parkir
+     * @param  int  $id
      * @param  \App\Parkir  $parkir
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id_parkir)
+    public function update(Request $request, $id)
     {
-        $parkir = Parkir::find($id_parkir);
+        $parkir = Parkir::find($id);
         $parkir->update($request->all());
     // return $parkir;
     /*$request->validate([
@@ -171,9 +171,9 @@ class ParkirController extends Controller
      * @param  int  $id_parkir
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id_parkir)
+    public function destroy($id)
     {
-        return Parkir::destroy($id_parkir);
+        return Parkir::destroy($id);
         $response = [
 			'message'=>'Delete Succesfully',
             
