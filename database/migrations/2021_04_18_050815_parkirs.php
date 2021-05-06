@@ -14,7 +14,7 @@ class Parkirs extends Migration
     public function up()
     {
         Schema::create('parkirs', function (Blueprint $table) {
-            $table->id_parkir();
+            $table->id();
             $table->string('nama_parkir');
             $table->string('lokasi_parkir');
             $table->integer('jarak');
